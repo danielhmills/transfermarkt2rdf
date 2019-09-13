@@ -1,0 +1,4613 @@
+[
+  {
+    "op": "core/column-addition",
+    "description": "Create column f at index 1 based on column _ - season using expression grel:value",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "newColumnName": "f",
+    "columnInsertIndex": 1,
+    "baseColumnName": "_ - season",
+    "expression": "grel:value",
+    "onError": "set-to-blank"
+  },
+  {
+    "op": "core/column-removal",
+    "description": "Remove column f",
+    "columnName": "f"
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column _ - transfer - value using expression grel:if(value == \"?\",\"\",value)",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "_ - transfer - value",
+    "expression": "grel:if(value == \"?\",\"\",value)",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column _ - transfer - value using expression grel:if(value == \"-\",\"\",value)",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "_ - transfer - value",
+    "expression": "grel:if(value == \"-\",\"\",value)",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column _ - transfer - value using expression grel:replace(value,\"£\",\"\")",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "_ - transfer - value",
+    "expression": "grel:replace(value,\"£\",\"\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column _ - player - href using expression grel:\"http://transfermarkt.com\" + value",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "_ - player - href",
+    "expression": "grel:\"http://transfermarkt.com\" + value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column _ - from - leagueHref using expression grel:if(value != \"\", \"http://transfermarkt.com\" + value, null)",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "_ - from - leagueHref",
+    "expression": "grel:if(value != \"\", \"http://transfermarkt.com\" + value, null)",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column _ - from - href using expression grel:\"https://transfermarkt.com/\" + value",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "_ - from - href",
+    "expression": "grel:\"https://transfermarkt.com/\" + value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column _ - to - href using expression grel:\"https://transfermarkt.com/\" + value",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "_ - to - href",
+    "expression": "grel:\"https://transfermarkt.com/\" + value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column _ - to - leagueHref using expression grel:\"https://transfermarkt.com/\" + value",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "_ - to - leagueHref",
+    "expression": "grel:\"https://transfermarkt.com/\" + value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column _ - transfer - href using expression grel:\"https://transfermarkt.com/\" + value",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "_ - transfer - href",
+    "expression": "grel:\"https://transfermarkt.com/\" + value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column _ - player - href using expression grel:replace(value,\"http:\",\"https:\")",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "_ - player - href",
+    "expression": "grel:replace(value,\"http:\",\"https:\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column _ - from - leagueHref using expression grel:replace(value,\"http:\",\"https:\")",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "_ - from - leagueHref",
+    "expression": "grel:replace(value,\"http:\",\"https:\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/mass-edit",
+    "description": "Mass edit cells in column _ - to - leagueHref",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "_ - to - leagueHref",
+    "expression": "value",
+    "edits": [
+      {
+        "fromBlank": false,
+        "fromError": false,
+        "from": [
+          "https://transfermarkt.com/"
+        ],
+        "to": ""
+      }
+    ]
+  },
+  {
+    "op": "core/mass-edit",
+    "description": "Mass edit cells in column _ - from - href",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "_ - from - href",
+    "expression": "value",
+    "edits": [
+      {
+        "fromBlank": false,
+        "fromError": false,
+        "from": [
+          "https://transfermarkt.com/"
+        ],
+        "to": ""
+      }
+    ]
+  },
+  {
+    "op": "core/column-addition",
+    "description": "Create column dateTime at index 26 based on column _ - transfer - timestamp using expression grel:'http://www.convert-unix-time.com/api?timestamp='+ substring(value, 0, 10)+'&timezone=Rome&returnType=json'",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "newColumnName": "dateTime",
+    "columnInsertIndex": 26,
+    "baseColumnName": "_ - transfer - timestamp",
+    "expression": "grel:'http://www.convert-unix-time.com/api?timestamp='+ substring(value, 0, 10)+'&timezone=Rome&returnType=json'",
+    "onError": "set-to-blank"
+  },
+  {
+    "op": "core/column-removal",
+    "description": "Remove column dateTime",
+    "columnName": "dateTime"
+  },
+  {
+    "op": "core/column-addition",
+    "description": "Create column toDT at index 26 based on column _ - transfer - timestamp using expression grel:value",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "newColumnName": "toDT",
+    "columnInsertIndex": 26,
+    "baseColumnName": "_ - transfer - timestamp",
+    "expression": "grel:value",
+    "onError": "set-to-blank"
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column toDT using expression grel:inc(toDate(\"01/01/1970 00:00:00\",\"dd/MM/YYYY H:m:s\"),value.toNumber(),\"seconds\").toString('yyyy-MM-dd HH:mm:ss')",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "toDT",
+    "expression": "grel:inc(toDate(\"01/01/1970 00:00:00\",\"dd/MM/YYYY H:m:s\"),value.toNumber(),\"seconds\").toString('yyyy-MM-dd HH:mm:ss')",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "rdf-extension/save-rdf-schema",
+    "description": "Save RDF schema skeleton",
+    "schema": {
+      "baseUri": "http://test.com#",
+      "prefixes": [
+        {
+          "name": "schema",
+          "uri": "http://schema.org/"
+        },
+        {
+          "name": "rdfs",
+          "uri": "http://www.w3.org/2000/01/rdf-schema#"
+        },
+        {
+          "name": "dbo",
+          "uri": "http://dbpedia.org/ontology/"
+        },
+        {
+          "name": "foaf",
+          "uri": "http://xmlns.com/foaf/0.1/"
+        },
+        {
+          "name": "owl",
+          "uri": "http://www.w3.org/2002/07/owl#"
+        },
+        {
+          "name": "rdf",
+          "uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+        },
+        {
+          "name": "skos",
+          "uri": "http://www.w3.org/2004/02/skos/core#"
+        }
+      ],
+      "rootNodes": [
+        {
+          "nodeType": "cell-as-resource",
+          "expression": "value",
+          "isRowNumberCell": false,
+          "columnName": "_ - player - href",
+          "rdfTypes": [],
+          "links": [
+            {
+              "uri": "http://xmlns.com/foaf/0.1/name",
+              "curie": "foaf:name",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - player - name"
+              }
+            },
+            {
+              "uri": "http://xmlns.com/foaf/0.1/depiction",
+              "curie": "foaf:depiction",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - player - image"
+              }
+            },
+            {
+              "uri": "hasPosition",
+              "curie": ":hasPosition",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - player - position",
+                "rdfTypes": [],
+                "links": [
+                  {
+                    "uri": "http://www.w3.org/2000/01/rdf-schema#label",
+                    "curie": "rdfs:label",
+                    "target": {
+                      "nodeType": "cell-as-literal",
+                      "expression": "value",
+                      "isRowNumberCell": false,
+                      "columnName": "_ - player - position"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "uri": "nationality",
+              "curie": ":nationality",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "if(value != \"\",\"http://dbpedia.org/resource/\" + replace(value,\" \",\"_\"),null)",
+                "isRowNumberCell": false,
+                "columnName": "_ - player - nationality",
+                "rdfTypes": [],
+                "links": [
+                  {
+                    "uri": "http://www.w3.org/2000/01/rdf-schema#label",
+                    "curie": "rdfs:label",
+                    "target": {
+                      "nodeType": "cell-as-literal",
+                      "expression": "value",
+                      "isRowNumberCell": false,
+                      "columnName": "_ - player - nationality"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "uri": "age",
+              "curie": ":age",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "valueType": "http://www.w3.org/2001/XMLSchema#int",
+                "columnName": "_ - player - age"
+              }
+            }
+          ]
+        },
+        {
+          "nodeType": "cell-as-resource",
+          "expression": "value + \"#transfer\"",
+          "isRowNumberCell": false,
+          "columnName": "_ - transfer - href",
+          "rdfTypes": [
+            {
+              "uri": "Transfer",
+              "curie": ":Transfer"
+            }
+          ],
+          "links": [
+            {
+              "uri": "http://www.w3.org/2004/02/skos/core#related",
+              "curie": "skos:related",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - player - href",
+                "rdfTypes": [],
+                "links": []
+              }
+            },
+            {
+              "uri": "transferValue",
+              "curie": ":transferValue",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - transfer - value"
+              }
+            },
+            {
+              "uri": "timestamp",
+              "curie": ":timestamp",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - transfer - timestamp"
+              }
+            },
+            {
+              "uri": "fromTeam",
+              "curie": ":fromTeam",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - from - href",
+                "rdfTypes": [],
+                "links": []
+              }
+            },
+            {
+              "uri": "toTeam",
+              "curie": ":toTeam",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - to - href",
+                "rdfTypes": [],
+                "links": []
+              }
+            },
+            {
+              "uri": "http://www.w3.org/2000/01/rdf-schema#label",
+              "curie": "rdfs:label",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "cells[\"_ - player - name\"].value + \" to \" + cells[\"_ - from - name\"].value",
+                "isRowNumberCell": false,
+                "columnName": "_ - transfer - value"
+              }
+            },
+            {
+              "uri": "transferDate",
+              "curie": ":transferDate",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "valueType": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "columnName": "toDT"
+              }
+            }
+          ]
+        },
+        {
+          "nodeType": "cell-as-resource",
+          "expression": "value",
+          "isRowNumberCell": false,
+          "columnName": "_ - to - href",
+          "rdfTypes": [
+            {
+              "uri": "Team",
+              "curie": ":Team"
+            }
+          ],
+          "links": [
+            {
+              "uri": "http://www.w3.org/2000/01/rdf-schema#label",
+              "curie": "rdfs:label",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - to - name"
+              }
+            },
+            {
+              "uri": "league",
+              "curie": ":league",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - to - leagueHref",
+                "rdfTypes": [],
+                "links": []
+              }
+            },
+            {
+              "uri": "http://xmlns.com/foaf/0.1/depiction",
+              "curie": "foaf:depiction",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "replace(value,\"tiny\",\"big\")",
+                "isRowNumberCell": false,
+                "columnName": "_ - to - image",
+                "rdfTypes": [],
+                "links": []
+              }
+            },
+            {
+              "uri": "country",
+              "curie": ":country",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "if(value != \"\",\"http://dbpedia.org/resource/\" + replace(value,\" \",\"_\"),null)",
+                "isRowNumberCell": false,
+                "columnName": "_ - to - country",
+                "rdfTypes": [],
+                "links": []
+              }
+            }
+          ]
+        },
+        {
+          "nodeType": "cell-as-resource",
+          "expression": "value",
+          "isRowNumberCell": false,
+          "columnName": "_ - from - href",
+          "rdfTypes": [
+            {
+              "uri": "Team",
+              "curie": ":Team"
+            }
+          ],
+          "links": [
+            {
+              "uri": "http://www.w3.org/2000/01/rdf-schema#label",
+              "curie": "rdfs:label",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - from - name"
+              }
+            },
+            {
+              "uri": "league",
+              "curie": ":league",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - from - leagueHref",
+                "rdfTypes": [],
+                "links": []
+              }
+            },
+            {
+              "uri": "http://xmlns.com/foaf/0.1/depiction",
+              "curie": "foaf:depiction",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "replace(value,\"tiny\",\"big\")",
+                "isRowNumberCell": false,
+                "columnName": "_ - from - image",
+                "rdfTypes": [],
+                "links": []
+              }
+            },
+            {
+              "uri": "country",
+              "curie": ":country",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "if(value != \"\",\"http://dbpedia.org/resource/\" + replace(value,\" \",\"_\"),null)",
+                "isRowNumberCell": false,
+                "columnName": "_ - from - country",
+                "rdfTypes": [],
+                "links": []
+              }
+            }
+          ]
+        },
+        {
+          "nodeType": "cell-as-resource",
+          "expression": "value",
+          "isRowNumberCell": false,
+          "columnName": "_ - to - leagueHref",
+          "rdfTypes": [
+            {
+              "uri": "League",
+              "curie": ":League"
+            }
+          ],
+          "links": [
+            {
+              "uri": "http://www.w3.org/2000/01/rdf-schema#lalbel",
+              "curie": "rdfs:lalbel",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - to - league"
+              }
+            }
+          ]
+        },
+        {
+          "nodeType": "cell-as-resource",
+          "expression": "value",
+          "isRowNumberCell": false,
+          "columnName": "_ - from - league",
+          "rdfTypes": [
+            {
+              "uri": "League",
+              "curie": ":League"
+            }
+          ],
+          "links": [
+            {
+              "uri": "http://www.w3.org/2000/01/rdf-schema#label",
+              "curie": "rdfs:label",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - from - league"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "op": "rdf-extension/save-rdf-schema",
+    "description": "Save RDF schema skeleton",
+    "schema": {
+      "baseUri": "http://test.com#",
+      "prefixes": [
+        {
+          "name": "schema",
+          "uri": "http://schema.org/"
+        },
+        {
+          "name": "rdfs",
+          "uri": "http://www.w3.org/2000/01/rdf-schema#"
+        },
+        {
+          "name": "foaf",
+          "uri": "http://xmlns.com/foaf/0.1/"
+        },
+        {
+          "name": "dbo",
+          "uri": "http://dbpedia.org/ontology/"
+        },
+        {
+          "name": "owl",
+          "uri": "http://www.w3.org/2002/07/owl#"
+        },
+        {
+          "name": "rdf",
+          "uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+        },
+        {
+          "name": "skos",
+          "uri": "http://www.w3.org/2004/02/skos/core#"
+        }
+      ],
+      "rootNodes": [
+        {
+          "nodeType": "cell-as-resource",
+          "expression": "value",
+          "isRowNumberCell": false,
+          "columnName": "_ - player - href",
+          "rdfTypes": [],
+          "links": [
+            {
+              "uri": "http://xmlns.com/foaf/0.1/name",
+              "curie": "foaf:name",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - player - name"
+              }
+            },
+            {
+              "uri": "http://xmlns.com/foaf/0.1/depiction",
+              "curie": "foaf:depiction",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - player - image"
+              }
+            },
+            {
+              "uri": "hasPosition",
+              "curie": ":hasPosition",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - player - position",
+                "rdfTypes": [],
+                "links": [
+                  {
+                    "uri": "http://www.w3.org/2000/01/rdf-schema#label",
+                    "curie": "rdfs:label",
+                    "target": {
+                      "nodeType": "cell-as-literal",
+                      "expression": "value",
+                      "isRowNumberCell": false,
+                      "columnName": "_ - player - position"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "uri": "nationality",
+              "curie": ":nationality",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "if(value != \"\",\"http://dbpedia.org/resource/\" + replace(value,\" \",\"_\"),null)",
+                "isRowNumberCell": false,
+                "columnName": "_ - player - nationality",
+                "rdfTypes": [],
+                "links": [
+                  {
+                    "uri": "http://www.w3.org/2000/01/rdf-schema#label",
+                    "curie": "rdfs:label",
+                    "target": {
+                      "nodeType": "cell-as-literal",
+                      "expression": "value",
+                      "isRowNumberCell": false,
+                      "columnName": "_ - player - nationality"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "uri": "age",
+              "curie": ":age",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "valueType": "http://www.w3.org/2001/XMLSchema#int",
+                "columnName": "_ - player - age"
+              }
+            }
+          ]
+        },
+        {
+          "nodeType": "cell-as-resource",
+          "expression": "value + \"#transfer\"",
+          "isRowNumberCell": false,
+          "columnName": "_ - transfer - href",
+          "rdfTypes": [
+            {
+              "uri": "Transfer",
+              "curie": ":Transfer"
+            }
+          ],
+          "links": [
+            {
+              "uri": "transferredPlayer",
+              "curie": ":transferredPlayer",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - player - href",
+                "rdfTypes": [],
+                "links": []
+              }
+            },
+            {
+              "uri": "transferValue",
+              "curie": ":transferValue",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - transfer - value"
+              }
+            },
+            {
+              "uri": "timestamp",
+              "curie": ":timestamp",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - transfer - timestamp"
+              }
+            },
+            {
+              "uri": "fromTeam",
+              "curie": ":fromTeam",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - from - href",
+                "rdfTypes": [],
+                "links": []
+              }
+            },
+            {
+              "uri": "toTeam",
+              "curie": ":toTeam",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - to - href",
+                "rdfTypes": [],
+                "links": []
+              }
+            },
+            {
+              "uri": "http://www.w3.org/2000/01/rdf-schema#label",
+              "curie": "rdfs:label",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "cells[\"_ - player - name\"].value + \" to \" + cells[\"_ - from - name\"].value",
+                "isRowNumberCell": false,
+                "columnName": "_ - transfer - value"
+              }
+            },
+            {
+              "uri": "transferDate",
+              "curie": ":transferDate",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "valueType": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "columnName": "toDT"
+              }
+            }
+          ]
+        },
+        {
+          "nodeType": "cell-as-resource",
+          "expression": "value",
+          "isRowNumberCell": false,
+          "columnName": "_ - to - href",
+          "rdfTypes": [
+            {
+              "uri": "Team",
+              "curie": ":Team"
+            }
+          ],
+          "links": [
+            {
+              "uri": "http://www.w3.org/2000/01/rdf-schema#label",
+              "curie": "rdfs:label",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - to - name"
+              }
+            },
+            {
+              "uri": "league",
+              "curie": ":league",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - to - leagueHref",
+                "rdfTypes": [],
+                "links": []
+              }
+            },
+            {
+              "uri": "http://xmlns.com/foaf/0.1/depiction",
+              "curie": "foaf:depiction",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "replace(value,\"tiny\",\"big\")",
+                "isRowNumberCell": false,
+                "columnName": "_ - to - image",
+                "rdfTypes": [],
+                "links": []
+              }
+            },
+            {
+              "uri": "country",
+              "curie": ":country",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "if(value != \"\",\"http://dbpedia.org/resource/\" + replace(value,\" \",\"_\"),null)",
+                "isRowNumberCell": false,
+                "columnName": "_ - to - country",
+                "rdfTypes": [],
+                "links": []
+              }
+            }
+          ]
+        },
+        {
+          "nodeType": "cell-as-resource",
+          "expression": "value",
+          "isRowNumberCell": false,
+          "columnName": "_ - from - href",
+          "rdfTypes": [
+            {
+              "uri": "Team",
+              "curie": ":Team"
+            }
+          ],
+          "links": [
+            {
+              "uri": "http://www.w3.org/2000/01/rdf-schema#label",
+              "curie": "rdfs:label",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - from - name"
+              }
+            },
+            {
+              "uri": "league",
+              "curie": ":league",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - from - leagueHref",
+                "rdfTypes": [],
+                "links": []
+              }
+            },
+            {
+              "uri": "http://xmlns.com/foaf/0.1/depiction",
+              "curie": "foaf:depiction",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "replace(value,\"tiny\",\"big\")",
+                "isRowNumberCell": false,
+                "columnName": "_ - from - image",
+                "rdfTypes": [],
+                "links": []
+              }
+            },
+            {
+              "uri": "country",
+              "curie": ":country",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "if(value != \"\",\"http://dbpedia.org/resource/\" + replace(value,\" \",\"_\"),null)",
+                "isRowNumberCell": false,
+                "columnName": "_ - from - country",
+                "rdfTypes": [],
+                "links": []
+              }
+            }
+          ]
+        },
+        {
+          "nodeType": "cell-as-resource",
+          "expression": "value",
+          "isRowNumberCell": false,
+          "columnName": "_ - to - leagueHref",
+          "rdfTypes": [
+            {
+              "uri": "League",
+              "curie": ":League"
+            }
+          ],
+          "links": [
+            {
+              "uri": "http://www.w3.org/2000/01/rdf-schema#lalbel",
+              "curie": "rdfs:lalbel",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - to - league"
+              }
+            }
+          ]
+        },
+        {
+          "nodeType": "cell-as-resource",
+          "expression": "value",
+          "isRowNumberCell": false,
+          "columnName": "_ - from - league",
+          "rdfTypes": [
+            {
+              "uri": "League",
+              "curie": ":League"
+            }
+          ],
+          "links": [
+            {
+              "uri": "http://www.w3.org/2000/01/rdf-schema#label",
+              "curie": "rdfs:label",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - from - league"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column _ - transfer - href using expression grel:replace(value,\"//j\",\"/j\")",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "_ - transfer - href",
+    "expression": "grel:replace(value,\"//j\",\"/j\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/mass-edit",
+    "description": "Mass edit cells in column _ - to - href",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "_ - to - href",
+    "expression": "value",
+    "edits": [
+      {
+        "fromBlank": false,
+        "fromError": false,
+        "from": [
+          "https://transfermarkt.com/"
+        ],
+        "to": ""
+      }
+    ]
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column _ - to - image using expression grel:replace(value,\"//im\",\"/im\")",
+    "engineConfig": {
+      "facets": [
+        {
+          "expression": "value",
+          "to": 12000000,
+          "selectError": true,
+          "selectNumeric": true,
+          "name": "_ - transfer - value",
+          "selectBlank": false,
+          "columnName": "_ - transfer - value",
+          "selectNonNumeric": false,
+          "from": 0,
+          "type": "range"
+        }
+      ],
+      "mode": "record-based"
+    },
+    "columnName": "_ - to - image",
+    "expression": "grel:replace(value,\"//im\",\"/im\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column _ - to - image using expression grel:replace(value,\"tiny\",\"big\")",
+    "engineConfig": {
+      "facets": [
+        {
+          "expression": "value",
+          "to": 12000000,
+          "selectError": true,
+          "selectNumeric": true,
+          "name": "_ - transfer - value",
+          "selectBlank": false,
+          "columnName": "_ - transfer - value",
+          "selectNonNumeric": false,
+          "from": 0,
+          "type": "range"
+        }
+      ],
+      "mode": "record-based"
+    },
+    "columnName": "_ - to - image",
+    "expression": "grel:replace(value,\"tiny\",\"big\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column _ - to - href using expression grel:replace(value,\".com//\",\".com/\")",
+    "engineConfig": {
+      "facets": [
+        {
+          "expression": "value",
+          "to": 12000000,
+          "selectError": true,
+          "selectNumeric": true,
+          "name": "_ - transfer - value",
+          "selectBlank": false,
+          "columnName": "_ - transfer - value",
+          "selectNonNumeric": false,
+          "from": 0,
+          "type": "range"
+        }
+      ],
+      "mode": "record-based"
+    },
+    "columnName": "_ - to - href",
+    "expression": "grel:replace(value,\".com//\",\".com/\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column _ - to - leagueHref using expression grel:replace(value,\".com//\",\".com/\")",
+    "engineConfig": {
+      "facets": [
+        {
+          "expression": "value",
+          "to": 12000000,
+          "selectError": true,
+          "selectNumeric": true,
+          "name": "_ - transfer - value",
+          "selectBlank": false,
+          "columnName": "_ - transfer - value",
+          "selectNonNumeric": false,
+          "from": 0,
+          "type": "range"
+        }
+      ],
+      "mode": "record-based"
+    },
+    "columnName": "_ - to - leagueHref",
+    "expression": "grel:replace(value,\".com//\",\".com/\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column _ - to - countryImage using expression grel:replace(value,\"//im\",\"/im\")",
+    "engineConfig": {
+      "facets": [
+        {
+          "expression": "value",
+          "to": 12000000,
+          "selectError": true,
+          "selectNumeric": true,
+          "name": "_ - transfer - value",
+          "selectBlank": false,
+          "columnName": "_ - transfer - value",
+          "selectNonNumeric": false,
+          "from": 0,
+          "type": "range"
+        }
+      ],
+      "mode": "record-based"
+    },
+    "columnName": "_ - to - countryImage",
+    "expression": "grel:replace(value,\"//im\",\"/im\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column _ - from - href using expression grel:replace(value,\".com//\",\".com/\")",
+    "engineConfig": {
+      "facets": [
+        {
+          "expression": "value",
+          "to": 12000000,
+          "selectError": true,
+          "selectNumeric": true,
+          "name": "_ - transfer - value",
+          "selectBlank": false,
+          "columnName": "_ - transfer - value",
+          "selectNonNumeric": false,
+          "from": 0,
+          "type": "range"
+        }
+      ],
+      "mode": "record-based"
+    },
+    "columnName": "_ - from - href",
+    "expression": "grel:replace(value,\".com//\",\".com/\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column _ - from - image using expression grel:replace(value,\"//im\",\"/im\")",
+    "engineConfig": {
+      "facets": [
+        {
+          "expression": "value",
+          "to": 12000000,
+          "selectError": true,
+          "selectNumeric": true,
+          "name": "_ - transfer - value",
+          "selectBlank": false,
+          "columnName": "_ - transfer - value",
+          "selectNonNumeric": false,
+          "from": 0,
+          "type": "range"
+        }
+      ],
+      "mode": "record-based"
+    },
+    "columnName": "_ - from - image",
+    "expression": "grel:replace(value,\"//im\",\"/im\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column _ - to - countryImage using expression grel:replace(value,\"tiny\",\"big\")",
+    "engineConfig": {
+      "facets": [
+        {
+          "expression": "value",
+          "to": 12000000,
+          "selectError": true,
+          "selectNumeric": true,
+          "name": "_ - transfer - value",
+          "selectBlank": false,
+          "columnName": "_ - transfer - value",
+          "selectNonNumeric": false,
+          "from": 0,
+          "type": "range"
+        }
+      ],
+      "mode": "record-based"
+    },
+    "columnName": "_ - to - countryImage",
+    "expression": "grel:replace(value,\"tiny\",\"big\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column _ - from - image using expression grel:replace(value,\"tiny\",\"big\")",
+    "engineConfig": {
+      "facets": [
+        {
+          "expression": "value",
+          "to": 12000000,
+          "selectError": true,
+          "selectNumeric": true,
+          "name": "_ - transfer - value",
+          "selectBlank": false,
+          "columnName": "_ - transfer - value",
+          "selectNonNumeric": false,
+          "from": 0,
+          "type": "range"
+        }
+      ],
+      "mode": "record-based"
+    },
+    "columnName": "_ - from - image",
+    "expression": "grel:replace(value,\"tiny\",\"big\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column _ - from - countryImage using expression grel:replace(value,\"//im\",\"/im\")",
+    "engineConfig": {
+      "facets": [
+        {
+          "expression": "value",
+          "to": 12000000,
+          "selectError": true,
+          "selectNumeric": true,
+          "name": "_ - transfer - value",
+          "selectBlank": false,
+          "columnName": "_ - transfer - value",
+          "selectNonNumeric": false,
+          "from": 0,
+          "type": "range"
+        }
+      ],
+      "mode": "record-based"
+    },
+    "columnName": "_ - from - countryImage",
+    "expression": "grel:replace(value,\"//im\",\"/im\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column _ - from - countryImage using expression grel:replace(value,\"tiny\",\"big\")",
+    "engineConfig": {
+      "facets": [
+        {
+          "expression": "value",
+          "to": 12000000,
+          "selectError": true,
+          "selectNumeric": true,
+          "name": "_ - transfer - value",
+          "selectBlank": false,
+          "columnName": "_ - transfer - value",
+          "selectNonNumeric": false,
+          "from": 0,
+          "type": "range"
+        }
+      ],
+      "mode": "record-based"
+    },
+    "columnName": "_ - from - countryImage",
+    "expression": "grel:replace(value,\"tiny\",\"big\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column _ - player - image using expression grel:replace(value,\"//im\",\"/im\")",
+    "engineConfig": {
+      "facets": [
+        {
+          "expression": "value",
+          "to": 12000000,
+          "selectError": true,
+          "selectNumeric": true,
+          "name": "_ - transfer - value",
+          "selectBlank": false,
+          "columnName": "_ - transfer - value",
+          "selectNonNumeric": false,
+          "from": 0,
+          "type": "range"
+        }
+      ],
+      "mode": "record-based"
+    },
+    "columnName": "_ - player - image",
+    "expression": "grel:replace(value,\"//im\",\"/im\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "rdf-extension/save-rdf-schema",
+    "description": "Save RDF schema skeleton",
+    "schema": {
+      "baseUri": "http://test.com#",
+      "prefixes": [
+        {
+          "name": "schema",
+          "uri": "http://schema.org/"
+        },
+        {
+          "name": "rdfs",
+          "uri": "http://www.w3.org/2000/01/rdf-schema#"
+        },
+        {
+          "name": "foaf",
+          "uri": "http://xmlns.com/foaf/0.1/"
+        },
+        {
+          "name": "dbo",
+          "uri": "http://dbpedia.org/ontology/"
+        },
+        {
+          "name": "owl",
+          "uri": "http://www.w3.org/2002/07/owl#"
+        },
+        {
+          "name": "rdf",
+          "uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+        },
+        {
+          "name": "skos",
+          "uri": "http://www.w3.org/2004/02/skos/core#"
+        }
+      ],
+      "rootNodes": [
+        {
+          "nodeType": "cell-as-resource",
+          "expression": "value +\"#player\"",
+          "isRowNumberCell": false,
+          "columnName": "_ - player - href",
+          "rdfTypes": [
+            {
+              "uri": "Player",
+              "curie": ":Player"
+            }
+          ],
+          "links": [
+            {
+              "uri": "http://xmlns.com/foaf/0.1/name",
+              "curie": "foaf:name",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - player - name"
+              }
+            },
+            {
+              "uri": "http://xmlns.com/foaf/0.1/depiction",
+              "curie": "foaf:depiction",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - player - image"
+              }
+            },
+            {
+              "uri": "hasPosition",
+              "curie": ":hasPosition",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - player - position",
+                "rdfTypes": [
+                  {
+                    "uri": "Position",
+                    "curie": ":Position"
+                  }
+                ],
+                "links": [
+                  {
+                    "uri": "http://www.w3.org/2000/01/rdf-schema#label",
+                    "curie": "rdfs:label",
+                    "target": {
+                      "nodeType": "cell-as-literal",
+                      "expression": "value",
+                      "isRowNumberCell": false,
+                      "columnName": "_ - player - position"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "uri": "nationality",
+              "curie": ":nationality",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "if(value != \"\",\"http://dbpedia.org/resource/\" + replace(value,\" \",\"_\"),null)",
+                "isRowNumberCell": false,
+                "columnName": "_ - player - nationality",
+                "rdfTypes": [],
+                "links": [
+                  {
+                    "uri": "http://www.w3.org/2000/01/rdf-schema#label",
+                    "curie": "rdfs:label",
+                    "target": {
+                      "nodeType": "cell-as-literal",
+                      "expression": "value",
+                      "isRowNumberCell": false,
+                      "columnName": "_ - player - nationality"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "uri": "age",
+              "curie": ":age",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "valueType": "http://www.w3.org/2001/XMLSchema#int",
+                "columnName": "_ - player - age"
+              }
+            }
+          ]
+        },
+        {
+          "nodeType": "cell-as-resource",
+          "expression": "if(cells[\"_ - to - href\"].value == \"\" ,null,value + \"#transfer\")",
+          "isRowNumberCell": false,
+          "columnName": "_ - transfer - href",
+          "rdfTypes": [
+            {
+              "uri": "Transfer",
+              "curie": ":Transfer"
+            }
+          ],
+          "links": [
+            {
+              "uri": "transferredPlayer",
+              "curie": ":transferredPlayer",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - player - href",
+                "rdfTypes": [],
+                "links": []
+              }
+            },
+            {
+              "uri": "hasFee",
+              "curie": ":hasFee",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - transfer - value"
+              }
+            },
+            {
+              "uri": "timestamp",
+              "curie": ":timestamp",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - transfer - timestamp"
+              }
+            },
+            {
+              "uri": "fromTeam",
+              "curie": ":fromTeam",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - from - href",
+                "rdfTypes": [],
+                "links": []
+              }
+            },
+            {
+              "uri": "toTeam",
+              "curie": ":toTeam",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - to - href",
+                "rdfTypes": [],
+                "links": []
+              }
+            },
+            {
+              "uri": "http://www.w3.org/2000/01/rdf-schema#label",
+              "curie": "rdfs:label",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "cells[\"_ - player - name\"].value + \" to \" + cells[\"_ - to - name\"].value",
+                "isRowNumberCell": false,
+                "columnName": "_ - transfer - value"
+              }
+            },
+            {
+              "uri": "transferDate",
+              "curie": ":transferDate",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "valueType": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "columnName": "toDT"
+              }
+            },
+            {
+              "uri": "season",
+              "curie": ":season",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - season",
+                "rdfTypes": [],
+                "links": []
+              }
+            }
+          ]
+        },
+        {
+          "nodeType": "cell-as-resource",
+          "expression": "value + \"#team\"",
+          "isRowNumberCell": false,
+          "columnName": "_ - to - href",
+          "rdfTypes": [
+            {
+              "uri": "Team",
+              "curie": ":Team"
+            }
+          ],
+          "links": [
+            {
+              "uri": "http://www.w3.org/2000/01/rdf-schema#label",
+              "curie": "rdfs:label",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - to - name"
+              }
+            },
+            {
+              "uri": "league",
+              "curie": ":league",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - to - leagueHref",
+                "rdfTypes": [],
+                "links": []
+              }
+            },
+            {
+              "uri": "http://xmlns.com/foaf/0.1/depiction",
+              "curie": "foaf:depiction",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "replace(value,\"tiny\",\"big\")",
+                "isRowNumberCell": false,
+                "columnName": "_ - to - image",
+                "rdfTypes": [],
+                "links": []
+              }
+            },
+            {
+              "uri": "country",
+              "curie": ":country",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "if(value != \"\",\"http://dbpedia.org/resource/\" + replace(value,\" \",\"_\"),null)",
+                "isRowNumberCell": false,
+                "columnName": "_ - to - country",
+                "rdfTypes": [],
+                "links": []
+              }
+            }
+          ]
+        },
+        {
+          "nodeType": "cell-as-resource",
+          "expression": "value + \"#team\"",
+          "isRowNumberCell": false,
+          "columnName": "_ - from - href",
+          "rdfTypes": [
+            {
+              "uri": "Team",
+              "curie": ":Team"
+            }
+          ],
+          "links": [
+            {
+              "uri": "http://www.w3.org/2000/01/rdf-schema#label",
+              "curie": "rdfs:label",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - from - name"
+              }
+            },
+            {
+              "uri": "league",
+              "curie": ":league",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - from - leagueHref",
+                "rdfTypes": [],
+                "links": []
+              }
+            },
+            {
+              "uri": "http://xmlns.com/foaf/0.1/depiction",
+              "curie": "foaf:depiction",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "replace(value,\"tiny\",\"big\")",
+                "isRowNumberCell": false,
+                "columnName": "_ - from - image",
+                "rdfTypes": [],
+                "links": []
+              }
+            },
+            {
+              "uri": "country",
+              "curie": ":country",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "if(value != \"\",\"http://dbpedia.org/resource/\" + replace(value,\" \",\"_\"),null)",
+                "isRowNumberCell": false,
+                "columnName": "_ - from - country",
+                "rdfTypes": [],
+                "links": []
+              }
+            }
+          ]
+        },
+        {
+          "nodeType": "cell-as-resource",
+          "expression": "value + \"#league\"",
+          "isRowNumberCell": false,
+          "columnName": "_ - to - leagueHref",
+          "rdfTypes": [
+            {
+              "uri": "League",
+              "curie": ":League"
+            }
+          ],
+          "links": [
+            {
+              "uri": "http://www.w3.org/2000/01/rdf-schema#label",
+              "curie": "rdfs:label",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - to - league"
+              }
+            }
+          ]
+        },
+        {
+          "nodeType": "cell-as-resource",
+          "expression": "value + \"#league\"",
+          "isRowNumberCell": false,
+          "columnName": "_ - from - leagueHref",
+          "rdfTypes": [
+            {
+              "uri": "League",
+              "curie": ":League"
+            }
+          ],
+          "links": [
+            {
+              "uri": "http://www.w3.org/2000/01/rdf-schema#label",
+              "curie": "rdfs:label",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - from - league"
+              }
+            }
+          ]
+        },
+        {
+          "nodeType": "cell-as-resource",
+          "expression": "value + \"#season\"",
+          "isRowNumberCell": false,
+          "columnName": "_ - season",
+          "rdfTypes": [
+            {
+              "uri": "FootballSeason",
+              "curie": ":FootballSeason"
+            }
+          ],
+          "links": [
+            {
+              "uri": "http://www.w3.org/2000/01/rdf-schema#label",
+              "curie": "rdfs:label",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - season"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column _ - from - countryImage using expression grel:replace(value,\"//i\",\"i\")",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "_ - from - countryImage",
+    "expression": "grel:replace(value,\"//i\",\"i\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column _ - from - countryImage using expression grel:replace(value,\"tiny\",\"big\")",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "_ - from - countryImage",
+    "expression": "grel:replace(value,\"tiny\",\"big\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column _ - from - image using expression grel:replace(value,\"//i\",\"i\");",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "_ - from - image",
+    "expression": "grel:replace(value,\"//i\",\"i\");",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column _ - from - image using expression grel:replace(value,\"tiny\",\"big\")",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "_ - from - image",
+    "expression": "grel:replace(value,\"tiny\",\"big\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column _ - from - href using expression grel:replace(value,\"com//\",\"com/\");",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "_ - from - href",
+    "expression": "grel:replace(value,\"com//\",\"com/\");",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column _ - to - countryImage using expression grel:replace(value,\"//i\",\"i\");",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "_ - to - countryImage",
+    "expression": "grel:replace(value,\"//i\",\"i\");",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column _ - to - countryImage using expression grel:replace(value,\"tiny\",\"big\");",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "_ - to - countryImage",
+    "expression": "grel:replace(value,\"tiny\",\"big\");",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column _ - to - href using expression grel:replace(value,\"com//\",\"com/\");",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "_ - to - href",
+    "expression": "grel:replace(value,\"com//\",\"com/\");",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column _ - to - image using expression grel:replace(value,\"//i\",\"i\");",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "_ - to - image",
+    "expression": "grel:replace(value,\"//i\",\"i\");",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column _ - to - leagueHref using expression grel:replace(value,\"com//\",\"com/\");",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "_ - to - leagueHref",
+    "expression": "grel:replace(value,\"com//\",\"com/\");",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column _ - to - image using expression grel:replace(value,\"tiny\",\"big\");",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "_ - to - image",
+    "expression": "grel:replace(value,\"tiny\",\"big\");",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "rdf-extension/save-rdf-schema",
+    "description": "Save RDF schema skeleton",
+    "schema": {
+      "baseUri": "http://test.com#",
+      "prefixes": [
+        {
+          "name": "schema",
+          "uri": "http://schema.org/"
+        },
+        {
+          "name": "rdfs",
+          "uri": "http://www.w3.org/2000/01/rdf-schema#"
+        },
+        {
+          "name": "dbo",
+          "uri": "http://dbpedia.org/ontology/"
+        },
+        {
+          "name": "foaf",
+          "uri": "http://xmlns.com/foaf/0.1/"
+        },
+        {
+          "name": "owl",
+          "uri": "http://www.w3.org/2002/07/owl#"
+        },
+        {
+          "name": "rdf",
+          "uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+        },
+        {
+          "name": "skos",
+          "uri": "http://www.w3.org/2004/02/skos/core#"
+        }
+      ],
+      "rootNodes": [
+        {
+          "nodeType": "cell-as-resource",
+          "expression": "value +\"#player\"",
+          "isRowNumberCell": false,
+          "columnName": "_ - player - href",
+          "rdfTypes": [
+            {
+              "uri": "Player",
+              "curie": ":Player"
+            }
+          ],
+          "links": [
+            {
+              "uri": "http://xmlns.com/foaf/0.1/name",
+              "curie": "foaf:name",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - player - name"
+              }
+            },
+            {
+              "uri": "http://xmlns.com/foaf/0.1/depiction",
+              "curie": "foaf:depiction",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - player - image"
+              }
+            },
+            {
+              "uri": "hasPosition",
+              "curie": ":hasPosition",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - player - position",
+                "rdfTypes": [
+                  {
+                    "uri": "Position",
+                    "curie": ":Position"
+                  }
+                ],
+                "links": [
+                  {
+                    "uri": "http://www.w3.org/2000/01/rdf-schema#label",
+                    "curie": "rdfs:label",
+                    "target": {
+                      "nodeType": "cell-as-literal",
+                      "expression": "value",
+                      "isRowNumberCell": false,
+                      "columnName": "_ - player - position"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "uri": "nationality",
+              "curie": ":nationality",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "if(value != \"\",\"http://dbpedia.org/resource/\" + replace(value,\" \",\"_\"),null)",
+                "isRowNumberCell": false,
+                "columnName": "_ - player - nationality",
+                "rdfTypes": [],
+                "links": [
+                  {
+                    "uri": "http://www.w3.org/2000/01/rdf-schema#label",
+                    "curie": "rdfs:label",
+                    "target": {
+                      "nodeType": "cell-as-literal",
+                      "expression": "value",
+                      "isRowNumberCell": false,
+                      "columnName": "_ - player - nationality"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "uri": "age",
+              "curie": ":age",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "valueType": "http://www.w3.org/2001/XMLSchema#int",
+                "columnName": "_ - player - age"
+              }
+            }
+          ]
+        },
+        {
+          "nodeType": "cell-as-resource",
+          "expression": "if(cells[\"_ - to - href\"].value == \"\" ,null,value + \"#transfer\")",
+          "isRowNumberCell": false,
+          "columnName": "_ - transfer - href",
+          "rdfTypes": [
+            {
+              "uri": "Transfer",
+              "curie": ":Transfer"
+            }
+          ],
+          "links": [
+            {
+              "uri": "transferredPlayer",
+              "curie": ":transferredPlayer",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - player - href",
+                "rdfTypes": [],
+                "links": []
+              }
+            },
+            {
+              "uri": "hasFee",
+              "curie": ":hasFee",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - transfer - value"
+              }
+            },
+            {
+              "uri": "timestamp",
+              "curie": ":timestamp",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - transfer - timestamp"
+              }
+            },
+            {
+              "uri": "fromClub",
+              "curie": ":fromClub",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - from - href",
+                "rdfTypes": [],
+                "links": []
+              }
+            },
+            {
+              "uri": "toClub",
+              "curie": ":toClub",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - to - href",
+                "rdfTypes": [],
+                "links": []
+              }
+            },
+            {
+              "uri": "http://www.w3.org/2000/01/rdf-schema#label",
+              "curie": "rdfs:label",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "cells[\"_ - player - name\"].value + \" to \" + cells[\"_ - to - name\"].value",
+                "isRowNumberCell": false,
+                "columnName": "_ - transfer - value"
+              }
+            },
+            {
+              "uri": "transferDate",
+              "curie": ":transferDate",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "valueType": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "columnName": "toDT"
+              }
+            },
+            {
+              "uri": "season",
+              "curie": ":season",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - season",
+                "rdfTypes": [],
+                "links": []
+              }
+            }
+          ]
+        },
+        {
+          "nodeType": "cell-as-resource",
+          "expression": "value + \"#club\"",
+          "isRowNumberCell": false,
+          "columnName": "_ - to - href",
+          "rdfTypes": [
+            {
+              "uri": "Club",
+              "curie": ":Club"
+            }
+          ],
+          "links": [
+            {
+              "uri": "http://www.w3.org/2000/01/rdf-schema#label",
+              "curie": "rdfs:label",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - to - name"
+              }
+            },
+            {
+              "uri": "league",
+              "curie": ":league",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - to - leagueHref",
+                "rdfTypes": [],
+                "links": []
+              }
+            },
+            {
+              "uri": "http://xmlns.com/foaf/0.1/depiction",
+              "curie": "foaf:depiction",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "replace(value,\"tiny\",\"big\")",
+                "isRowNumberCell": false,
+                "columnName": "_ - to - image",
+                "rdfTypes": [],
+                "links": []
+              }
+            },
+            {
+              "uri": "country",
+              "curie": ":country",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "if(value != \"\",\"http://dbpedia.org/resource/\" + replace(value,\" \",\"_\"),null)",
+                "isRowNumberCell": false,
+                "columnName": "_ - to - country",
+                "rdfTypes": [],
+                "links": []
+              }
+            }
+          ]
+        },
+        {
+          "nodeType": "cell-as-resource",
+          "expression": "value + \"#club\"",
+          "isRowNumberCell": false,
+          "columnName": "_ - from - href",
+          "rdfTypes": [
+            {
+              "uri": "Club",
+              "curie": ":Club"
+            }
+          ],
+          "links": [
+            {
+              "uri": "http://www.w3.org/2000/01/rdf-schema#label",
+              "curie": "rdfs:label",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - from - name"
+              }
+            },
+            {
+              "uri": "league",
+              "curie": ":league",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - from - leagueHref",
+                "rdfTypes": [],
+                "links": []
+              }
+            },
+            {
+              "uri": "http://xmlns.com/foaf/0.1/depiction",
+              "curie": "foaf:depiction",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "replace(value,\"tiny\",\"big\")",
+                "isRowNumberCell": false,
+                "columnName": "_ - from - image",
+                "rdfTypes": [],
+                "links": []
+              }
+            },
+            {
+              "uri": "country",
+              "curie": ":country",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "if(value != \"\",\"http://dbpedia.org/resource/\" + replace(value,\" \",\"_\"),null)",
+                "isRowNumberCell": false,
+                "columnName": "_ - from - country",
+                "rdfTypes": [],
+                "links": []
+              }
+            }
+          ]
+        },
+        {
+          "nodeType": "cell-as-resource",
+          "expression": "value + \"#league\"",
+          "isRowNumberCell": false,
+          "columnName": "_ - to - leagueHref",
+          "rdfTypes": [
+            {
+              "uri": "League",
+              "curie": ":League"
+            }
+          ],
+          "links": [
+            {
+              "uri": "http://www.w3.org/2000/01/rdf-schema#label",
+              "curie": "rdfs:label",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - to - league"
+              }
+            }
+          ]
+        },
+        {
+          "nodeType": "cell-as-resource",
+          "expression": "value + \"#league\"",
+          "isRowNumberCell": false,
+          "columnName": "_ - from - leagueHref",
+          "rdfTypes": [
+            {
+              "uri": "League",
+              "curie": ":League"
+            }
+          ],
+          "links": [
+            {
+              "uri": "http://www.w3.org/2000/01/rdf-schema#label",
+              "curie": "rdfs:label",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - from - league"
+              }
+            }
+          ]
+        },
+        {
+          "nodeType": "cell-as-resource",
+          "expression": "value + \"#season\"",
+          "isRowNumberCell": false,
+          "columnName": "_ - season",
+          "rdfTypes": [
+            {
+              "uri": "FootballSeason",
+              "curie": ":FootballSeason"
+            }
+          ],
+          "links": [
+            {
+              "uri": "http://www.w3.org/2000/01/rdf-schema#label",
+              "curie": "rdfs:label",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - season"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "op": "rdf-extension/save-rdf-schema",
+    "description": "Save RDF schema skeleton",
+    "schema": {
+      "baseUri": "http://test.com#",
+      "prefixes": [
+        {
+          "name": "schema",
+          "uri": "http://schema.org/"
+        },
+        {
+          "name": "rdfs",
+          "uri": "http://www.w3.org/2000/01/rdf-schema#"
+        },
+        {
+          "name": "foaf",
+          "uri": "http://xmlns.com/foaf/0.1/"
+        },
+        {
+          "name": "dbo",
+          "uri": "http://dbpedia.org/ontology/"
+        },
+        {
+          "name": "owl",
+          "uri": "http://www.w3.org/2002/07/owl#"
+        },
+        {
+          "name": "rdf",
+          "uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+        },
+        {
+          "name": "skos",
+          "uri": "http://www.w3.org/2004/02/skos/core#"
+        }
+      ],
+      "rootNodes": [
+        {
+          "nodeType": "cell-as-resource",
+          "expression": "value +\"#player\"",
+          "isRowNumberCell": false,
+          "columnName": "_ - player - href",
+          "rdfTypes": [
+            {
+              "uri": "Player",
+              "curie": ":Player"
+            }
+          ],
+          "links": [
+            {
+              "uri": "http://xmlns.com/foaf/0.1/name",
+              "curie": "foaf:name",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - player - name"
+              }
+            },
+            {
+              "uri": "http://xmlns.com/foaf/0.1/depiction",
+              "curie": "foaf:depiction",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - player - image"
+              }
+            },
+            {
+              "uri": "hasPosition",
+              "curie": ":hasPosition",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - player - position",
+                "rdfTypes": [
+                  {
+                    "uri": "Position",
+                    "curie": ":Position"
+                  }
+                ],
+                "links": [
+                  {
+                    "uri": "http://www.w3.org/2000/01/rdf-schema#label",
+                    "curie": "rdfs:label",
+                    "target": {
+                      "nodeType": "cell-as-literal",
+                      "expression": "value",
+                      "isRowNumberCell": false,
+                      "columnName": "_ - player - position"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "uri": "nationality",
+              "curie": ":nationality",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "if(value != \"\",\"http://dbpedia.org/resource/\" + replace(value,\" \",\"_\"),null)",
+                "isRowNumberCell": false,
+                "columnName": "_ - player - nationality",
+                "rdfTypes": [],
+                "links": [
+                  {
+                    "uri": "http://www.w3.org/2000/01/rdf-schema#label",
+                    "curie": "rdfs:label",
+                    "target": {
+                      "nodeType": "cell-as-literal",
+                      "expression": "value",
+                      "isRowNumberCell": false,
+                      "columnName": "_ - player - nationality"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "uri": "age",
+              "curie": ":age",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "valueType": "http://www.w3.org/2001/XMLSchema#int",
+                "columnName": "_ - player - age"
+              }
+            }
+          ]
+        },
+        {
+          "nodeType": "cell-as-resource",
+          "expression": "if(cells[\"_ - to - href\"].value == \"\" ,null,value + \"#transfer\")",
+          "isRowNumberCell": false,
+          "columnName": "_ - transfer - href",
+          "rdfTypes": [
+            {
+              "uri": "Transfer",
+              "curie": ":Transfer"
+            }
+          ],
+          "links": [
+            {
+              "uri": "transferredPlayer",
+              "curie": ":transferredPlayer",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "value+\"#player\"",
+                "isRowNumberCell": false,
+                "columnName": "_ - player - href",
+                "rdfTypes": [],
+                "links": []
+              }
+            },
+            {
+              "uri": "hasFee",
+              "curie": ":hasFee",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - transfer - value"
+              }
+            },
+            {
+              "uri": "timestamp",
+              "curie": ":timestamp",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - transfer - timestamp"
+              }
+            },
+            {
+              "uri": "fromClub",
+              "curie": ":fromClub",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "value + \"#club\"",
+                "isRowNumberCell": false,
+                "columnName": "_ - from - href",
+                "rdfTypes": [],
+                "links": []
+              }
+            },
+            {
+              "uri": "toClub",
+              "curie": ":toClub",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "value +\"#club\"",
+                "isRowNumberCell": false,
+                "columnName": "_ - to - href",
+                "rdfTypes": [],
+                "links": []
+              }
+            },
+            {
+              "uri": "http://www.w3.org/2000/01/rdf-schema#label",
+              "curie": "rdfs:label",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "cells[\"_ - player - name\"].value + \" to \" + cells[\"_ - to - name\"].value",
+                "isRowNumberCell": false,
+                "columnName": "_ - transfer - value"
+              }
+            },
+            {
+              "uri": "transferDate",
+              "curie": ":transferDate",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "valueType": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "columnName": "toDT"
+              }
+            },
+            {
+              "uri": "season",
+              "curie": ":season",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - season",
+                "rdfTypes": [],
+                "links": []
+              }
+            }
+          ]
+        },
+        {
+          "nodeType": "cell-as-resource",
+          "expression": "value + \"#club\"",
+          "isRowNumberCell": false,
+          "columnName": "_ - to - href",
+          "rdfTypes": [
+            {
+              "uri": "Club",
+              "curie": ":Club"
+            }
+          ],
+          "links": [
+            {
+              "uri": "http://www.w3.org/2000/01/rdf-schema#label",
+              "curie": "rdfs:label",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - to - name"
+              }
+            },
+            {
+              "uri": "league",
+              "curie": ":league",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "value + \"#league\"",
+                "isRowNumberCell": false,
+                "columnName": "_ - to - leagueHref",
+                "rdfTypes": [],
+                "links": []
+              }
+            },
+            {
+              "uri": "http://xmlns.com/foaf/0.1/depiction",
+              "curie": "foaf:depiction",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "replace(value,\"tiny\",\"big\")",
+                "isRowNumberCell": false,
+                "columnName": "_ - to - image",
+                "rdfTypes": [],
+                "links": []
+              }
+            },
+            {
+              "uri": "country",
+              "curie": ":country",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "if(value != \"\",\"http://dbpedia.org/resource/\" + replace(value,\" \",\"_\"),null)",
+                "isRowNumberCell": false,
+                "columnName": "_ - to - country",
+                "rdfTypes": [],
+                "links": []
+              }
+            }
+          ]
+        },
+        {
+          "nodeType": "cell-as-resource",
+          "expression": "value + \"#club\"",
+          "isRowNumberCell": false,
+          "columnName": "_ - from - href",
+          "rdfTypes": [
+            {
+              "uri": "Club",
+              "curie": ":Club"
+            }
+          ],
+          "links": [
+            {
+              "uri": "http://www.w3.org/2000/01/rdf-schema#label",
+              "curie": "rdfs:label",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - from - name"
+              }
+            },
+            {
+              "uri": "league",
+              "curie": ":league",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "value + \"#league\"",
+                "isRowNumberCell": false,
+                "columnName": "_ - from - leagueHref",
+                "rdfTypes": [],
+                "links": []
+              }
+            },
+            {
+              "uri": "http://xmlns.com/foaf/0.1/depiction",
+              "curie": "foaf:depiction",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "replace(value,\"tiny\",\"big\")",
+                "isRowNumberCell": false,
+                "columnName": "_ - from - image",
+                "rdfTypes": [],
+                "links": []
+              }
+            },
+            {
+              "uri": "country",
+              "curie": ":country",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "if(value != \"\",\"http://dbpedia.org/resource/\" + replace(value,\" \",\"_\"),null)",
+                "isRowNumberCell": false,
+                "columnName": "_ - from - country",
+                "rdfTypes": [],
+                "links": []
+              }
+            }
+          ]
+        },
+        {
+          "nodeType": "cell-as-resource",
+          "expression": "value + \"#league\"",
+          "isRowNumberCell": false,
+          "columnName": "_ - to - leagueHref",
+          "rdfTypes": [
+            {
+              "uri": "League",
+              "curie": ":League"
+            }
+          ],
+          "links": [
+            {
+              "uri": "http://www.w3.org/2000/01/rdf-schema#label",
+              "curie": "rdfs:label",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - to - league"
+              }
+            }
+          ]
+        },
+        {
+          "nodeType": "cell-as-resource",
+          "expression": "value + \"#league\"",
+          "isRowNumberCell": false,
+          "columnName": "_ - from - leagueHref",
+          "rdfTypes": [
+            {
+              "uri": "League",
+              "curie": ":League"
+            }
+          ],
+          "links": [
+            {
+              "uri": "http://www.w3.org/2000/01/rdf-schema#label",
+              "curie": "rdfs:label",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - from - league"
+              }
+            }
+          ]
+        },
+        {
+          "nodeType": "cell-as-resource",
+          "expression": "value + \"#season\"",
+          "isRowNumberCell": false,
+          "columnName": "_ - season",
+          "rdfTypes": [
+            {
+              "uri": "FootballSeason",
+              "curie": ":FootballSeason"
+            }
+          ],
+          "links": [
+            {
+              "uri": "http://www.w3.org/2000/01/rdf-schema#label",
+              "curie": "rdfs:label",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - season"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "op": "rdf-extension/save-rdf-schema",
+    "description": "Save RDF schema skeleton",
+    "schema": {
+      "baseUri": "http://test.com#",
+      "prefixes": [
+        {
+          "name": "schema",
+          "uri": "http://schema.org/"
+        },
+        {
+          "name": "rdfs",
+          "uri": "http://www.w3.org/2000/01/rdf-schema#"
+        },
+        {
+          "name": "dbo",
+          "uri": "http://dbpedia.org/ontology/"
+        },
+        {
+          "name": "foaf",
+          "uri": "http://xmlns.com/foaf/0.1/"
+        },
+        {
+          "name": "owl",
+          "uri": "http://www.w3.org/2002/07/owl#"
+        },
+        {
+          "name": "rdf",
+          "uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+        },
+        {
+          "name": "skos",
+          "uri": "http://www.w3.org/2004/02/skos/core#"
+        }
+      ],
+      "rootNodes": [
+        {
+          "nodeType": "cell-as-resource",
+          "expression": "value +\"#player\"",
+          "isRowNumberCell": false,
+          "columnName": "_ - player - href",
+          "rdfTypes": [
+            {
+              "uri": "Player",
+              "curie": ":Player"
+            }
+          ],
+          "links": [
+            {
+              "uri": "http://xmlns.com/foaf/0.1/name",
+              "curie": "foaf:name",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - player - name"
+              }
+            },
+            {
+              "uri": "http://xmlns.com/foaf/0.1/depiction",
+              "curie": "foaf:depiction",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - player - image"
+              }
+            },
+            {
+              "uri": "hasPosition",
+              "curie": ":hasPosition",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - player - position",
+                "rdfTypes": [
+                  {
+                    "uri": "Position",
+                    "curie": ":Position"
+                  }
+                ],
+                "links": [
+                  {
+                    "uri": "http://www.w3.org/2000/01/rdf-schema#label",
+                    "curie": "rdfs:label",
+                    "target": {
+                      "nodeType": "cell-as-literal",
+                      "expression": "value",
+                      "isRowNumberCell": false,
+                      "columnName": "_ - player - position"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "uri": "nationality",
+              "curie": ":nationality",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "if(value != \"\",\"http://dbpedia.org/resource/\" + replace(value,\" \",\"_\"),null)",
+                "isRowNumberCell": false,
+                "columnName": "_ - player - nationality",
+                "rdfTypes": [],
+                "links": [
+                  {
+                    "uri": "http://www.w3.org/2000/01/rdf-schema#label",
+                    "curie": "rdfs:label",
+                    "target": {
+                      "nodeType": "cell-as-literal",
+                      "expression": "value",
+                      "isRowNumberCell": false,
+                      "columnName": "_ - player - nationality"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "uri": "age",
+              "curie": ":age",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "valueType": "http://www.w3.org/2001/XMLSchema#int",
+                "columnName": "_ - player - age"
+              }
+            }
+          ]
+        },
+        {
+          "nodeType": "cell-as-resource",
+          "expression": "if(cells[\"_ - to - href\"].value == \"\" ,null,value + \"#transfer\")",
+          "isRowNumberCell": false,
+          "columnName": "_ - transfer - href",
+          "rdfTypes": [
+            {
+              "uri": "Transfer",
+              "curie": ":Transfer"
+            }
+          ],
+          "links": [
+            {
+              "uri": "transferredPlayer",
+              "curie": ":transferredPlayer",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "value+\"#player\"",
+                "isRowNumberCell": false,
+                "columnName": "_ - player - href",
+                "rdfTypes": [],
+                "links": []
+              }
+            },
+            {
+              "uri": "hasFee",
+              "curie": ":hasFee",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "toNumber(value)",
+                "isRowNumberCell": false,
+                "valueType": "http://www.w3.org/2001/XMLSchema#int",
+                "columnName": "_ - transfer - value"
+              }
+            },
+            {
+              "uri": "timestamp",
+              "curie": ":timestamp",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - transfer - timestamp"
+              }
+            },
+            {
+              "uri": "fromClub",
+              "curie": ":fromClub",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "value + \"#club\"",
+                "isRowNumberCell": false,
+                "columnName": "_ - from - href",
+                "rdfTypes": [],
+                "links": []
+              }
+            },
+            {
+              "uri": "toClub",
+              "curie": ":toClub",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "value +\"#club\"",
+                "isRowNumberCell": false,
+                "columnName": "_ - to - href",
+                "rdfTypes": [],
+                "links": []
+              }
+            },
+            {
+              "uri": "http://www.w3.org/2000/01/rdf-schema#label",
+              "curie": "rdfs:label",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "cells[\"_ - player - name\"].value + \" to \" + cells[\"_ - to - name\"].value",
+                "isRowNumberCell": false,
+                "columnName": "_ - transfer - value"
+              }
+            },
+            {
+              "uri": "transferDate",
+              "curie": ":transferDate",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "valueType": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "columnName": "toDT"
+              }
+            },
+            {
+              "uri": "season",
+              "curie": ":season",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - season",
+                "rdfTypes": [],
+                "links": []
+              }
+            }
+          ]
+        },
+        {
+          "nodeType": "cell-as-resource",
+          "expression": "value + \"#club\"",
+          "isRowNumberCell": false,
+          "columnName": "_ - to - href",
+          "rdfTypes": [
+            {
+              "uri": "Club",
+              "curie": ":Club"
+            }
+          ],
+          "links": [
+            {
+              "uri": "http://www.w3.org/2000/01/rdf-schema#label",
+              "curie": "rdfs:label",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - to - name"
+              }
+            },
+            {
+              "uri": "league",
+              "curie": ":league",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "value + \"#league\"",
+                "isRowNumberCell": false,
+                "columnName": "_ - to - leagueHref",
+                "rdfTypes": [],
+                "links": []
+              }
+            },
+            {
+              "uri": "http://xmlns.com/foaf/0.1/depiction",
+              "curie": "foaf:depiction",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "replace(value,\"tiny\",\"big\")",
+                "isRowNumberCell": false,
+                "columnName": "_ - to - image",
+                "rdfTypes": [],
+                "links": []
+              }
+            },
+            {
+              "uri": "country",
+              "curie": ":country",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "if(value != \"\",\"http://dbpedia.org/resource/\" + replace(value,\" \",\"_\"),null)",
+                "isRowNumberCell": false,
+                "columnName": "_ - to - country",
+                "rdfTypes": [],
+                "links": []
+              }
+            }
+          ]
+        },
+        {
+          "nodeType": "cell-as-resource",
+          "expression": "value + \"#club\"",
+          "isRowNumberCell": false,
+          "columnName": "_ - from - href",
+          "rdfTypes": [
+            {
+              "uri": "Club",
+              "curie": ":Club"
+            }
+          ],
+          "links": [
+            {
+              "uri": "http://www.w3.org/2000/01/rdf-schema#label",
+              "curie": "rdfs:label",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - from - name"
+              }
+            },
+            {
+              "uri": "league",
+              "curie": ":league",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "value + \"#league\"",
+                "isRowNumberCell": false,
+                "columnName": "_ - from - leagueHref",
+                "rdfTypes": [],
+                "links": []
+              }
+            },
+            {
+              "uri": "http://xmlns.com/foaf/0.1/depiction",
+              "curie": "foaf:depiction",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "replace(value,\"tiny\",\"big\")",
+                "isRowNumberCell": false,
+                "columnName": "_ - from - image",
+                "rdfTypes": [],
+                "links": []
+              }
+            },
+            {
+              "uri": "country",
+              "curie": ":country",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "if(value != \"\",\"http://dbpedia.org/resource/\" + replace(value,\" \",\"_\"),null)",
+                "isRowNumberCell": false,
+                "columnName": "_ - from - country",
+                "rdfTypes": [],
+                "links": []
+              }
+            }
+          ]
+        },
+        {
+          "nodeType": "cell-as-resource",
+          "expression": "value + \"#league\"",
+          "isRowNumberCell": false,
+          "columnName": "_ - to - leagueHref",
+          "rdfTypes": [
+            {
+              "uri": "League",
+              "curie": ":League"
+            }
+          ],
+          "links": [
+            {
+              "uri": "http://www.w3.org/2000/01/rdf-schema#label",
+              "curie": "rdfs:label",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - to - league"
+              }
+            }
+          ]
+        },
+        {
+          "nodeType": "cell-as-resource",
+          "expression": "value + \"#league\"",
+          "isRowNumberCell": false,
+          "columnName": "_ - from - leagueHref",
+          "rdfTypes": [
+            {
+              "uri": "League",
+              "curie": ":League"
+            }
+          ],
+          "links": [
+            {
+              "uri": "http://www.w3.org/2000/01/rdf-schema#label",
+              "curie": "rdfs:label",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - from - league"
+              }
+            }
+          ]
+        },
+        {
+          "nodeType": "cell-as-resource",
+          "expression": "value + \"#season\"",
+          "isRowNumberCell": false,
+          "columnName": "_ - season",
+          "rdfTypes": [
+            {
+              "uri": "FootballSeason",
+              "curie": ":FootballSeason"
+            }
+          ],
+          "links": [
+            {
+              "uri": "http://www.w3.org/2000/01/rdf-schema#label",
+              "curie": "rdfs:label",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - season"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column _ - transfer - value using expression grel:if(contains(value,\"m\"),toNumber(replace(value,\"m\",\"\"))*1000000,value)",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "_ - transfer - value",
+    "expression": "grel:if(contains(value,\"m\"),toNumber(replace(value,\"m\",\"\"))*1000000,value)",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column _ - transfer - value using expression grel:if(contains(value,\"k\"),toNumber(replace(value,\"k\",\"\"))*1000,value)",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "_ - transfer - value",
+    "expression": "grel:if(contains(value,\"k\"),toNumber(replace(value,\"k\",\"\"))*1000,value)",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column _ - transfer - value using expression value.toNumber()",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "_ - transfer - value",
+    "expression": "value.toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "rdf-extension/save-rdf-schema",
+    "description": "Save RDF schema skeleton",
+    "schema": {
+      "baseUri": "http://test.com#",
+      "prefixes": [
+        {
+          "name": "schema",
+          "uri": "http://schema.org/"
+        },
+        {
+          "name": "rdfs",
+          "uri": "http://www.w3.org/2000/01/rdf-schema#"
+        },
+        {
+          "name": "dbo",
+          "uri": "http://dbpedia.org/ontology/"
+        },
+        {
+          "name": "foaf",
+          "uri": "http://xmlns.com/foaf/0.1/"
+        },
+        {
+          "name": "owl",
+          "uri": "http://www.w3.org/2002/07/owl#"
+        },
+        {
+          "name": "rdf",
+          "uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+        },
+        {
+          "name": "skos",
+          "uri": "http://www.w3.org/2004/02/skos/core#"
+        }
+      ],
+      "rootNodes": [
+        {
+          "nodeType": "cell-as-resource",
+          "expression": "value +\"#player\"",
+          "isRowNumberCell": false,
+          "columnName": "_ - player - href",
+          "rdfTypes": [
+            {
+              "uri": "Player",
+              "curie": ":Player"
+            }
+          ],
+          "links": [
+            {
+              "uri": "http://xmlns.com/foaf/0.1/name",
+              "curie": "foaf:name",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - player - name"
+              }
+            },
+            {
+              "uri": "http://xmlns.com/foaf/0.1/depiction",
+              "curie": "foaf:depiction",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - player - image"
+              }
+            },
+            {
+              "uri": "hasPosition",
+              "curie": ":hasPosition",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - player - position",
+                "rdfTypes": [
+                  {
+                    "uri": "Position",
+                    "curie": ":Position"
+                  }
+                ],
+                "links": [
+                  {
+                    "uri": "http://www.w3.org/2000/01/rdf-schema#label",
+                    "curie": "rdfs:label",
+                    "target": {
+                      "nodeType": "cell-as-literal",
+                      "expression": "value",
+                      "isRowNumberCell": false,
+                      "columnName": "_ - player - position"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "uri": "nationality",
+              "curie": ":nationality",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "if(value != \"\",\"http://dbpedia.org/resource/\" + replace(value,\" \",\"_\"),null)",
+                "isRowNumberCell": false,
+                "columnName": "_ - player - nationality",
+                "rdfTypes": [],
+                "links": [
+                  {
+                    "uri": "http://www.w3.org/2000/01/rdf-schema#label",
+                    "curie": "rdfs:label",
+                    "target": {
+                      "nodeType": "cell-as-literal",
+                      "expression": "value",
+                      "isRowNumberCell": false,
+                      "columnName": "_ - player - nationality"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "uri": "age",
+              "curie": ":age",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "valueType": "http://www.w3.org/2001/XMLSchema#int",
+                "columnName": "_ - player - age"
+              }
+            }
+          ]
+        },
+        {
+          "nodeType": "cell-as-resource",
+          "expression": "if(cells[\"_ - to - href\"].value == \"\" ,null,value + \"#transfer\")",
+          "isRowNumberCell": false,
+          "columnName": "_ - transfer - href",
+          "rdfTypes": [
+            {
+              "uri": "Transfer",
+              "curie": ":Transfer"
+            }
+          ],
+          "links": [
+            {
+              "uri": "transferredPlayer",
+              "curie": ":transferredPlayer",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "value+\"#player\"",
+                "isRowNumberCell": false,
+                "columnName": "_ - player - href",
+                "rdfTypes": [],
+                "links": []
+              }
+            },
+            {
+              "uri": "hasFee",
+              "curie": ":hasFee",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "valueType": "http://www.w3.org/2001/XMLSchema#int",
+                "columnName": "_ - transfer - value"
+              }
+            },
+            {
+              "uri": "timestamp",
+              "curie": ":timestamp",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - transfer - timestamp"
+              }
+            },
+            {
+              "uri": "fromClub",
+              "curie": ":fromClub",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "value + \"#club\"",
+                "isRowNumberCell": false,
+                "columnName": "_ - from - href",
+                "rdfTypes": [],
+                "links": []
+              }
+            },
+            {
+              "uri": "toClub",
+              "curie": ":toClub",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "value +\"#club\"",
+                "isRowNumberCell": false,
+                "columnName": "_ - to - href",
+                "rdfTypes": [],
+                "links": []
+              }
+            },
+            {
+              "uri": "http://www.w3.org/2000/01/rdf-schema#label",
+              "curie": "rdfs:label",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "cells[\"_ - player - name\"].value + \" to \" + cells[\"_ - to - name\"].value",
+                "isRowNumberCell": false,
+                "columnName": "_ - transfer - value"
+              }
+            },
+            {
+              "uri": "transferDate",
+              "curie": ":transferDate",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "valueType": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "columnName": "toDT"
+              }
+            },
+            {
+              "uri": "season",
+              "curie": ":season",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - season",
+                "rdfTypes": [],
+                "links": []
+              }
+            }
+          ]
+        },
+        {
+          "nodeType": "cell-as-resource",
+          "expression": "value + \"#club\"",
+          "isRowNumberCell": false,
+          "columnName": "_ - to - href",
+          "rdfTypes": [
+            {
+              "uri": "Club",
+              "curie": ":Club"
+            }
+          ],
+          "links": [
+            {
+              "uri": "http://www.w3.org/2000/01/rdf-schema#label",
+              "curie": "rdfs:label",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - to - name"
+              }
+            },
+            {
+              "uri": "league",
+              "curie": ":league",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "value + \"#league\"",
+                "isRowNumberCell": false,
+                "columnName": "_ - to - leagueHref",
+                "rdfTypes": [],
+                "links": []
+              }
+            },
+            {
+              "uri": "http://xmlns.com/foaf/0.1/depiction",
+              "curie": "foaf:depiction",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "replace(value,\"tiny\",\"big\")",
+                "isRowNumberCell": false,
+                "columnName": "_ - to - image",
+                "rdfTypes": [],
+                "links": []
+              }
+            },
+            {
+              "uri": "country",
+              "curie": ":country",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "if(value != \"\",\"http://dbpedia.org/resource/\" + replace(value,\" \",\"_\"),null)",
+                "isRowNumberCell": false,
+                "columnName": "_ - to - country",
+                "rdfTypes": [],
+                "links": []
+              }
+            }
+          ]
+        },
+        {
+          "nodeType": "cell-as-resource",
+          "expression": "value + \"#club\"",
+          "isRowNumberCell": false,
+          "columnName": "_ - from - href",
+          "rdfTypes": [
+            {
+              "uri": "Club",
+              "curie": ":Club"
+            }
+          ],
+          "links": [
+            {
+              "uri": "http://www.w3.org/2000/01/rdf-schema#label",
+              "curie": "rdfs:label",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - from - name"
+              }
+            },
+            {
+              "uri": "league",
+              "curie": ":league",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "value + \"#league\"",
+                "isRowNumberCell": false,
+                "columnName": "_ - from - leagueHref",
+                "rdfTypes": [],
+                "links": []
+              }
+            },
+            {
+              "uri": "http://xmlns.com/foaf/0.1/depiction",
+              "curie": "foaf:depiction",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "replace(value,\"tiny\",\"big\")",
+                "isRowNumberCell": false,
+                "columnName": "_ - from - image",
+                "rdfTypes": [],
+                "links": []
+              }
+            },
+            {
+              "uri": "country",
+              "curie": ":country",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "if(value != \"\",\"http://dbpedia.org/resource/\" + replace(value,\" \",\"_\"),null)",
+                "isRowNumberCell": false,
+                "columnName": "_ - from - country",
+                "rdfTypes": [],
+                "links": []
+              }
+            }
+          ]
+        },
+        {
+          "nodeType": "cell-as-resource",
+          "expression": "value + \"#league\"",
+          "isRowNumberCell": false,
+          "columnName": "_ - to - leagueHref",
+          "rdfTypes": [
+            {
+              "uri": "League",
+              "curie": ":League"
+            }
+          ],
+          "links": [
+            {
+              "uri": "http://www.w3.org/2000/01/rdf-schema#label",
+              "curie": "rdfs:label",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - to - league"
+              }
+            }
+          ]
+        },
+        {
+          "nodeType": "cell-as-resource",
+          "expression": "value + \"#league\"",
+          "isRowNumberCell": false,
+          "columnName": "_ - from - leagueHref",
+          "rdfTypes": [
+            {
+              "uri": "League",
+              "curie": ":League"
+            }
+          ],
+          "links": [
+            {
+              "uri": "http://www.w3.org/2000/01/rdf-schema#label",
+              "curie": "rdfs:label",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - from - league"
+              }
+            }
+          ]
+        },
+        {
+          "nodeType": "cell-as-resource",
+          "expression": "value + \"#season\"",
+          "isRowNumberCell": false,
+          "columnName": "_ - season",
+          "rdfTypes": [
+            {
+              "uri": "FootballSeason",
+              "curie": ":FootballSeason"
+            }
+          ],
+          "links": [
+            {
+              "uri": "http://www.w3.org/2000/01/rdf-schema#label",
+              "curie": "rdfs:label",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - season"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column _ - transfer - value using expression grel:value.floor().toString()",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "_ - transfer - value",
+    "expression": "grel:value.floor().toString()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "rdf-extension/save-rdf-schema",
+    "description": "Save RDF schema skeleton",
+    "schema": {
+      "baseUri": "http://test.com#",
+      "prefixes": [
+        {
+          "name": "schema",
+          "uri": "http://schema.org/"
+        },
+        {
+          "name": "rdfs",
+          "uri": "http://www.w3.org/2000/01/rdf-schema#"
+        },
+        {
+          "name": "foaf",
+          "uri": "http://xmlns.com/foaf/0.1/"
+        },
+        {
+          "name": "dbo",
+          "uri": "http://dbpedia.org/ontology/"
+        },
+        {
+          "name": "owl",
+          "uri": "http://www.w3.org/2002/07/owl#"
+        },
+        {
+          "name": "rdf",
+          "uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+        },
+        {
+          "name": "skos",
+          "uri": "http://www.w3.org/2004/02/skos/core#"
+        }
+      ],
+      "rootNodes": [
+        {
+          "nodeType": "cell-as-resource",
+          "expression": "value +\"#player\"",
+          "isRowNumberCell": false,
+          "columnName": "_ - player - href",
+          "rdfTypes": [
+            {
+              "uri": "Player",
+              "curie": ":Player"
+            }
+          ],
+          "links": [
+            {
+              "uri": "http://xmlns.com/foaf/0.1/name",
+              "curie": "foaf:name",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - player - name"
+              }
+            },
+            {
+              "uri": "http://xmlns.com/foaf/0.1/depiction",
+              "curie": "foaf:depiction",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - player - image"
+              }
+            },
+            {
+              "uri": "hasPosition",
+              "curie": ":hasPosition",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - player - position",
+                "rdfTypes": [
+                  {
+                    "uri": "Position",
+                    "curie": ":Position"
+                  }
+                ],
+                "links": [
+                  {
+                    "uri": "http://www.w3.org/2000/01/rdf-schema#label",
+                    "curie": "rdfs:label",
+                    "target": {
+                      "nodeType": "cell-as-literal",
+                      "expression": "value",
+                      "isRowNumberCell": false,
+                      "columnName": "_ - player - position"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "uri": "nationality",
+              "curie": ":nationality",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "if(value != \"\",\"http://dbpedia.org/resource/\" + replace(value,\" \",\"_\"),null)",
+                "isRowNumberCell": false,
+                "columnName": "_ - player - nationality",
+                "rdfTypes": [],
+                "links": [
+                  {
+                    "uri": "http://www.w3.org/2000/01/rdf-schema#label",
+                    "curie": "rdfs:label",
+                    "target": {
+                      "nodeType": "cell-as-literal",
+                      "expression": "value",
+                      "isRowNumberCell": false,
+                      "columnName": "_ - player - nationality"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "uri": "age",
+              "curie": ":age",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "valueType": "http://www.w3.org/2001/XMLSchema#int",
+                "columnName": "_ - player - age"
+              }
+            }
+          ]
+        },
+        {
+          "nodeType": "cell-as-resource",
+          "expression": "if(cells[\"_ - to - href\"].value == \"\" ,null,value + \"#transfer\")",
+          "isRowNumberCell": false,
+          "columnName": "_ - transfer - href",
+          "rdfTypes": [
+            {
+              "uri": "Transfer",
+              "curie": ":Transfer"
+            }
+          ],
+          "links": [
+            {
+              "uri": "transferredPlayer",
+              "curie": ":transferredPlayer",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "value+\"#player\"",
+                "isRowNumberCell": false,
+                "columnName": "_ - player - href",
+                "rdfTypes": [],
+                "links": []
+              }
+            },
+            {
+              "uri": "hasFee",
+              "curie": ":hasFee",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "valueType": "http://www.w3.org/2001/XMLSchema#int",
+                "columnName": "_ - transfer - value"
+              }
+            },
+            {
+              "uri": "timestamp",
+              "curie": ":timestamp",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - transfer - timestamp"
+              }
+            },
+            {
+              "uri": "fromClub",
+              "curie": ":fromClub",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "value + \"#club\"",
+                "isRowNumberCell": false,
+                "columnName": "_ - from - href",
+                "rdfTypes": [],
+                "links": []
+              }
+            },
+            {
+              "uri": "toClub",
+              "curie": ":toClub",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "value +\"#club\"",
+                "isRowNumberCell": false,
+                "columnName": "_ - to - href",
+                "rdfTypes": [],
+                "links": []
+              }
+            },
+            {
+              "uri": "http://www.w3.org/2000/01/rdf-schema#label",
+              "curie": "rdfs:label",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "cells[\"_ - player - name\"].value + \" to \" + cells[\"_ - to - name\"].value",
+                "isRowNumberCell": false,
+                "columnName": "_ - transfer - value"
+              }
+            },
+            {
+              "uri": "transferDate",
+              "curie": ":transferDate",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "valueType": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "columnName": "toDT"
+              }
+            },
+            {
+              "uri": "season",
+              "curie": ":season",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - season",
+                "rdfTypes": [],
+                "links": []
+              }
+            }
+          ]
+        },
+        {
+          "nodeType": "cell-as-resource",
+          "expression": "value + \"#club\"",
+          "isRowNumberCell": false,
+          "columnName": "_ - to - href",
+          "rdfTypes": [
+            {
+              "uri": "Club",
+              "curie": ":Club"
+            }
+          ],
+          "links": [
+            {
+              "uri": "http://www.w3.org/2000/01/rdf-schema#label",
+              "curie": "rdfs:label",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - to - name"
+              }
+            },
+            {
+              "uri": "league",
+              "curie": ":league",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "value + \"#league\"",
+                "isRowNumberCell": false,
+                "columnName": "_ - to - leagueHref",
+                "rdfTypes": [],
+                "links": []
+              }
+            },
+            {
+              "uri": "http://xmlns.com/foaf/0.1/depiction",
+              "curie": "foaf:depiction",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "replace(value,\"tiny\",\"big\")",
+                "isRowNumberCell": false,
+                "columnName": "_ - to - image",
+                "rdfTypes": [],
+                "links": []
+              }
+            },
+            {
+              "uri": "country",
+              "curie": ":country",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - to - country",
+                "rdfTypes": [],
+                "links": [
+                  {
+                    "uri": "http://www.w3.org/2000/01/rdf-schema#label",
+                    "curie": "rdfs:label",
+                    "target": {
+                      "nodeType": "cell-as-literal",
+                      "expression": "value",
+                      "isRowNumberCell": false,
+                      "columnName": "_ - to - country"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "nodeType": "cell-as-resource",
+          "expression": "value + \"#club\"",
+          "isRowNumberCell": false,
+          "columnName": "_ - from - href",
+          "rdfTypes": [
+            {
+              "uri": "Club",
+              "curie": ":Club"
+            }
+          ],
+          "links": [
+            {
+              "uri": "http://www.w3.org/2000/01/rdf-schema#label",
+              "curie": "rdfs:label",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - from - name"
+              }
+            },
+            {
+              "uri": "league",
+              "curie": ":league",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "value + \"#league\"",
+                "isRowNumberCell": false,
+                "columnName": "_ - from - leagueHref",
+                "rdfTypes": [],
+                "links": []
+              }
+            },
+            {
+              "uri": "http://xmlns.com/foaf/0.1/depiction",
+              "curie": "foaf:depiction",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "replace(value,\"tiny\",\"big\")",
+                "isRowNumberCell": false,
+                "columnName": "_ - from - image",
+                "rdfTypes": [],
+                "links": []
+              }
+            },
+            {
+              "uri": "country",
+              "curie": ":country",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - from - country",
+                "rdfTypes": [],
+                "links": [
+                  {
+                    "uri": "http://www.w3.org/2000/01/rdf-schema#label",
+                    "curie": "rdfs:label",
+                    "target": {
+                      "nodeType": "cell-as-literal",
+                      "expression": "value",
+                      "isRowNumberCell": false,
+                      "columnName": "_ - from - country"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "nodeType": "cell-as-resource",
+          "expression": "value + \"#league\"",
+          "isRowNumberCell": false,
+          "columnName": "_ - to - leagueHref",
+          "rdfTypes": [
+            {
+              "uri": "League",
+              "curie": ":League"
+            }
+          ],
+          "links": [
+            {
+              "uri": "http://www.w3.org/2000/01/rdf-schema#label",
+              "curie": "rdfs:label",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - to - league"
+              }
+            }
+          ]
+        },
+        {
+          "nodeType": "cell-as-resource",
+          "expression": "value + \"#league\"",
+          "isRowNumberCell": false,
+          "columnName": "_ - from - leagueHref",
+          "rdfTypes": [
+            {
+              "uri": "League",
+              "curie": ":League"
+            }
+          ],
+          "links": [
+            {
+              "uri": "http://www.w3.org/2000/01/rdf-schema#label",
+              "curie": "rdfs:label",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - from - league"
+              }
+            }
+          ]
+        },
+        {
+          "nodeType": "cell-as-resource",
+          "expression": "value + \"#season\"",
+          "isRowNumberCell": false,
+          "columnName": "_ - season",
+          "rdfTypes": [
+            {
+              "uri": "FootballSeason",
+              "curie": ":FootballSeason"
+            }
+          ],
+          "links": [
+            {
+              "uri": "http://www.w3.org/2000/01/rdf-schema#label",
+              "curie": "rdfs:label",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - season"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "op": "rdf-extension/save-rdf-schema",
+    "description": "Save RDF schema skeleton",
+    "schema": {
+      "baseUri": "https://transfermarkt.com/ontology#",
+      "prefixes": [
+        {
+          "name": "schema",
+          "uri": "http://schema.org/"
+        },
+        {
+          "name": "rdfs",
+          "uri": "http://www.w3.org/2000/01/rdf-schema#"
+        },
+        {
+          "name": "dbo",
+          "uri": "http://dbpedia.org/ontology/"
+        },
+        {
+          "name": "foaf",
+          "uri": "http://xmlns.com/foaf/0.1/"
+        },
+        {
+          "name": "owl",
+          "uri": "http://www.w3.org/2002/07/owl#"
+        },
+        {
+          "name": "rdf",
+          "uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+        },
+        {
+          "name": "skos",
+          "uri": "http://www.w3.org/2004/02/skos/core#"
+        }
+      ],
+      "rootNodes": [
+        {
+          "nodeType": "cell-as-resource",
+          "expression": "value +\"#player\"",
+          "isRowNumberCell": false,
+          "columnName": "_ - player - href",
+          "rdfTypes": [
+            {
+              "uri": "Player",
+              "curie": ":Player"
+            }
+          ],
+          "links": [
+            {
+              "uri": "http://xmlns.com/foaf/0.1/name",
+              "curie": "foaf:name",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - player - name"
+              }
+            },
+            {
+              "uri": "http://xmlns.com/foaf/0.1/depiction",
+              "curie": "foaf:depiction",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - player - image"
+              }
+            },
+            {
+              "uri": "hasPosition",
+              "curie": ":hasPosition",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - player - position",
+                "rdfTypes": [
+                  {
+                    "uri": "Position",
+                    "curie": ":Position"
+                  }
+                ],
+                "links": [
+                  {
+                    "uri": "http://www.w3.org/2000/01/rdf-schema#label",
+                    "curie": "rdfs:label",
+                    "target": {
+                      "nodeType": "cell-as-literal",
+                      "expression": "value",
+                      "isRowNumberCell": false,
+                      "columnName": "_ - player - position"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "uri": "nationality",
+              "curie": ":nationality",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "if(value != \"\",\"http://dbpedia.org/resource/\" + replace(value,\" \",\"_\"),null)",
+                "isRowNumberCell": false,
+                "columnName": "_ - player - nationality",
+                "rdfTypes": [],
+                "links": [
+                  {
+                    "uri": "http://www.w3.org/2000/01/rdf-schema#label",
+                    "curie": "rdfs:label",
+                    "target": {
+                      "nodeType": "cell-as-literal",
+                      "expression": "value",
+                      "isRowNumberCell": false,
+                      "columnName": "_ - player - nationality"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "uri": "age",
+              "curie": ":age",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "valueType": "http://www.w3.org/2001/XMLSchema#int",
+                "columnName": "_ - player - age"
+              }
+            }
+          ]
+        },
+        {
+          "nodeType": "cell-as-resource",
+          "expression": "if(cells[\"_ - to - href\"].value == \"\" ,null,value + \"#transfer\")",
+          "isRowNumberCell": false,
+          "columnName": "_ - transfer - href",
+          "rdfTypes": [
+            {
+              "uri": "Transfer",
+              "curie": ":Transfer"
+            }
+          ],
+          "links": [
+            {
+              "uri": "transferredPlayer",
+              "curie": ":transferredPlayer",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "value+\"#player\"",
+                "isRowNumberCell": false,
+                "columnName": "_ - player - href",
+                "rdfTypes": [],
+                "links": []
+              }
+            },
+            {
+              "uri": "hasFee",
+              "curie": ":hasFee",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "valueType": "http://www.w3.org/2001/XMLSchema#int",
+                "columnName": "_ - transfer - value"
+              }
+            },
+            {
+              "uri": "timestamp",
+              "curie": ":timestamp",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - transfer - timestamp"
+              }
+            },
+            {
+              "uri": "fromClub",
+              "curie": ":fromClub",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "value + \"#club\"",
+                "isRowNumberCell": false,
+                "columnName": "_ - from - href",
+                "rdfTypes": [],
+                "links": []
+              }
+            },
+            {
+              "uri": "toClub",
+              "curie": ":toClub",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "value +\"#club\"",
+                "isRowNumberCell": false,
+                "columnName": "_ - to - href",
+                "rdfTypes": [],
+                "links": []
+              }
+            },
+            {
+              "uri": "http://www.w3.org/2000/01/rdf-schema#label",
+              "curie": "rdfs:label",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "cells[\"_ - player - name\"].value + \" to \" + cells[\"_ - to - name\"].value",
+                "isRowNumberCell": false,
+                "columnName": "_ - transfer - value"
+              }
+            },
+            {
+              "uri": "transferDate",
+              "curie": ":transferDate",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "valueType": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "columnName": "toDT"
+              }
+            },
+            {
+              "uri": "season",
+              "curie": ":season",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - season",
+                "rdfTypes": [],
+                "links": []
+              }
+            }
+          ]
+        },
+        {
+          "nodeType": "cell-as-resource",
+          "expression": "value + \"#club\"",
+          "isRowNumberCell": false,
+          "columnName": "_ - to - href",
+          "rdfTypes": [
+            {
+              "uri": "Club",
+              "curie": ":Club"
+            }
+          ],
+          "links": [
+            {
+              "uri": "http://www.w3.org/2000/01/rdf-schema#label",
+              "curie": "rdfs:label",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - to - name"
+              }
+            },
+            {
+              "uri": "league",
+              "curie": ":league",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "value + \"#league\"",
+                "isRowNumberCell": false,
+                "columnName": "_ - to - leagueHref",
+                "rdfTypes": [],
+                "links": []
+              }
+            },
+            {
+              "uri": "http://xmlns.com/foaf/0.1/depiction",
+              "curie": "foaf:depiction",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "replace(value,\"tiny\",\"big\")",
+                "isRowNumberCell": false,
+                "columnName": "_ - to - image",
+                "rdfTypes": [],
+                "links": []
+              }
+            },
+            {
+              "uri": "country",
+              "curie": ":country",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - to - country",
+                "rdfTypes": [],
+                "links": [
+                  {
+                    "uri": "http://www.w3.org/2000/01/rdf-schema#label",
+                    "curie": "rdfs:label",
+                    "target": {
+                      "nodeType": "cell-as-literal",
+                      "expression": "value",
+                      "isRowNumberCell": false,
+                      "columnName": "_ - to - country"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "nodeType": "cell-as-resource",
+          "expression": "value + \"#club\"",
+          "isRowNumberCell": false,
+          "columnName": "_ - from - href",
+          "rdfTypes": [
+            {
+              "uri": "Club",
+              "curie": ":Club"
+            }
+          ],
+          "links": [
+            {
+              "uri": "http://www.w3.org/2000/01/rdf-schema#label",
+              "curie": "rdfs:label",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - from - name"
+              }
+            },
+            {
+              "uri": "league",
+              "curie": ":league",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "value + \"#league\"",
+                "isRowNumberCell": false,
+                "columnName": "_ - from - leagueHref",
+                "rdfTypes": [],
+                "links": []
+              }
+            },
+            {
+              "uri": "http://xmlns.com/foaf/0.1/depiction",
+              "curie": "foaf:depiction",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "replace(value,\"tiny\",\"big\")",
+                "isRowNumberCell": false,
+                "columnName": "_ - from - image",
+                "rdfTypes": [],
+                "links": []
+              }
+            },
+            {
+              "uri": "country",
+              "curie": ":country",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - from - country",
+                "rdfTypes": [],
+                "links": [
+                  {
+                    "uri": "http://www.w3.org/2000/01/rdf-schema#label",
+                    "curie": "rdfs:label",
+                    "target": {
+                      "nodeType": "cell-as-literal",
+                      "expression": "value",
+                      "isRowNumberCell": false,
+                      "columnName": "_ - from - country"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "nodeType": "cell-as-resource",
+          "expression": "value + \"#league\"",
+          "isRowNumberCell": false,
+          "columnName": "_ - to - leagueHref",
+          "rdfTypes": [
+            {
+              "uri": "League",
+              "curie": ":League"
+            }
+          ],
+          "links": [
+            {
+              "uri": "http://www.w3.org/2000/01/rdf-schema#label",
+              "curie": "rdfs:label",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - to - league"
+              }
+            }
+          ]
+        },
+        {
+          "nodeType": "cell-as-resource",
+          "expression": "value + \"#league\"",
+          "isRowNumberCell": false,
+          "columnName": "_ - from - leagueHref",
+          "rdfTypes": [
+            {
+              "uri": "League",
+              "curie": ":League"
+            }
+          ],
+          "links": [
+            {
+              "uri": "http://www.w3.org/2000/01/rdf-schema#label",
+              "curie": "rdfs:label",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - from - league"
+              }
+            }
+          ]
+        },
+        {
+          "nodeType": "cell-as-resource",
+          "expression": "value + \"#season\"",
+          "isRowNumberCell": false,
+          "columnName": "_ - season",
+          "rdfTypes": [
+            {
+              "uri": "FootballSeason",
+              "curie": ":FootballSeason"
+            }
+          ],
+          "links": [
+            {
+              "uri": "http://www.w3.org/2000/01/rdf-schema#label",
+              "curie": "rdfs:label",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "_ - season"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+]
